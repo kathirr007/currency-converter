@@ -5,7 +5,6 @@
     <KeepAlive>
       <CurrencyForm />
     </KeepAlive>
-
   </div>
 </template>
 

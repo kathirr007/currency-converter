@@ -6,8 +6,12 @@ import { RouterView } from 'vue-router'
   <header>
       <h1>Currency exchanger</h1>
   </header>
+  <RouterView v-slot="{Component}">
+    <KeepAlive include="HomeView">
+      <component :is="Component" />
+    </KeepAlive>
+  </RouterView>
 
-  <RouterView />
 </template>
 
 <style scoped>

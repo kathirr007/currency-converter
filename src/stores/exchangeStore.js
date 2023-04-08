@@ -1,16 +1,13 @@
 import { defineStore } from "pinia";
 import { ref } from 'vue';
-export const useExchangeStore = defineStore('exchange', () => {
+export const useExchangeStore = defineStore('exchange-store', () => {
   // state
   const loading = ref(false)
   const apiKey = import.meta.env.VITE_APIKEY
   const currencies = ref([])
   const error = ref()
   const data = ref()
-  const currencyOne = ref('EUR')
-  const currencyTwo = ref('PLN')
-  const amountOne = ref(1)
-  const amountTwo = ref()
+
   const rates = ref()
 
   //actions
@@ -30,6 +27,6 @@ export const useExchangeStore = defineStore('exchange', () => {
     currencies.value = json.supported_codes
   }
 
-  return { data, loading, currencies, error, handleCurrencies, handleCurrencyRates, currencyOne,currencyTwo,amountOne,amountTwo,rates}
+  return { data, loading, currencies, error, handleCurrencies, handleCurrencyRates, rates}
 
 })
