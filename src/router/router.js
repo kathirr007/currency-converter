@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from '../views/HomeView.vue'
 import CountryView from '../views/CountryView.vue'
+import CountryInfo from '../views/CountryInfo.vue'
 const router = createRouter(
   {
     history: createWebHistory(),
@@ -8,14 +9,19 @@ const router = createRouter(
       [
         {
           name: 'HomeView',
-          path: '/',
+          path: '/currency-app/',
           component: HomeView
         },
         {
           name:'CountryView',
-          path:'/CountryView/:id',
+          path:'/currency-app/CountryView/:id',
           component:CountryView,
-          prosp:true
+          props:true
+        },
+        {
+          name:'CountryInfo',
+          path:'/currency-app/CountryInfo/:id',
+          component:CountryInfo
         }
       ]
   })
