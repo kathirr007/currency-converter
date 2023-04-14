@@ -4,7 +4,7 @@ import { RouterView } from 'vue-router'
 
 <template>
   <header>
-      <h1>Currency exchanger</h1>
+      <h1>Currency exchanger+country info</h1>
   </header>
   <RouterView v-slot="{Component}">
     <KeepAlive include="HomeView">

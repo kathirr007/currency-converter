@@ -21,7 +21,8 @@ const router = createRouter(
         {
           name:'CountryInfo',
           path:'/currency-app/CountryInfo/:id',
-          component:CountryInfo
+          component:CountryInfo,
+          props:true
         }
       ]
   })

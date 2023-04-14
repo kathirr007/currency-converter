@@ -1,10 +1,10 @@
 <template>
   <div>
-    <RouterLink to="/currency-app/">Back</RouterLink>
+    <router-link to="/currency-app/">Back</router-link>
     <div>
       <h1>Countries with currency: {{route.params.id}}</h1>
-      <div>
-        <router-link :to="{name:'CountryInfo',params:{id:country.name.common} }" v-for="country in store.data" :key="country.tId">
+      <div v-if="!store.loading">
+        <router-link :to="{name:'CountryInfo',params:{id:country.cca3} }" v-for="country in store.data" :key="country.tId">
           {{ country.name.common }}
         </router-link>
       </div>
@@ -14,16 +14,16 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
 import { useCountryStore } from '../stores/countryStore';
 import { useRoute } from 'vue-router';
 const route = useRoute()
 const store = useCountryStore()
-onMounted(async()=>{
+const handleFetch = async()=>{
   store.loading=true
   await store.handleCountry(route.params.id)
   store.loading=false
-})
+}
+handleFetch()
 </script>
 
 <style lang="scss" scoped>
