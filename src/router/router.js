@@ -9,18 +9,18 @@ const router = createRouter(
       [
         {
           name: 'HomeView',
-          path: '/currency-app/',
+          path: '/currency-converter/',
           component: HomeView
         },
         {
           name:'CountryView',
-          path:'/currency-app/CountryView/:id',
+          path:'/currency-converter/CountryView/:id',
           component:CountryView,
           props:true
         },
         {
           name:'CountryInfo',
-          path:'/currency-app/CountryInfo/:id',
+          path:'/currency-converter/CountryInfo/:id',
           component:CountryInfo,
           props:true
         }

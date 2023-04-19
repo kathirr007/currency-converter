@@ -3,7 +3,7 @@
     <a class="link link-back" @click="$router.go(-1)">
       <i class="fas fa-arrow-left"></i>
     </a>
-    <the-loader v-if="store.loading"/>
+    <the-loader v-if="store.loading" />
     <div v-else-if="store.error">{{ store.error }}</div>
     <div class="info" v-else-if="!store.loading">
 
@@ -62,26 +62,31 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
-.info{
+.info {
   display: grid;
   place-content: center;
   text-align: center;
-  & h1,img,p{
-    margin:0 auto;
+
+  & h1,
+  img,
+  p {
+    margin: 0 auto;
     padding: $space-h;
   }
-  img{
+
+  img {
     outline: 1px solid #000;
-    padding:0;
+    padding: 0;
   }
-  &-item-borders{
-    padding:$space-1;
+
+  &-item-borders {
+    padding: $space-1;
     display: grid;
-    gap:$space-h;
-    grid-template-columns: repeat(auto-fit,minmax(75px,1fr));
-    & a{
-      width:100%;
+    gap: $space-h;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+
+    & a {
+      width: 100%;
     }
   }
-}
-</style>
+}</style>
