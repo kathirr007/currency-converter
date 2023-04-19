@@ -19,12 +19,13 @@ export const useCountryStore = defineStore('country-store',()=>{
       error.value = err
     }
   }
+
   const handleCountryInfo = async(code) => {
     try{
       loading.value = true
       const resp = await fetch(`https://restcountries.com/v3.1/alpha/${code}
       `)
-    const json = await resp.json()
+      const json = await resp.json()
     countryInfo.value = json
     loading.value = false
     }
@@ -32,5 +33,6 @@ export const useCountryStore = defineStore('country-store',()=>{
       error.value = err
     }
   }
+
   return {data,handleCountry,countryInfo,handleCountryInfo}
 })

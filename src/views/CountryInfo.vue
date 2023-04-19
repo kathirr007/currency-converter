@@ -1,9 +1,10 @@
 <template>
   <div>
-    <a class="link" @click="$router.go(-1)">
+    <a class="link link-back" @click="$router.go(-1)">
       <i class="fas fa-arrow-left"></i>
     </a>
-    <div class="loader" v-if="store.loading">Loading..</div>
+    <the-loader v-if="store.loading"/>
+    <div v-else-if="store.error">{{ store.error }}</div>
     <div class="info" v-else-if="!store.loading">
 
       <div class="info-item" v-for="info in store.countryInfo" :key="info.tId">
@@ -37,14 +38,15 @@
 </template>
 
 <script setup>
+import TheLoader from '../components/TheLoader.vue';
 import { onMounted } from 'vue';
 import { useCountryStore } from '../stores/countryStore';
 import { onBeforeRouteUpdate, useRoute } from 'vue-router';
+
 const store = useCountryStore()
 const route = useRoute()
 
 const handleInfo = async (id) => {
-
   store.loading = true
   await store.handleCountryInfo(id)
   store.loading = false
@@ -67,6 +69,10 @@ onMounted(async () => {
   & h1,img,p{
     margin:0 auto;
     padding: $space-h;
+  }
+  img{
+    outline: 1px solid #000;
+    padding:0;
   }
   &-item-borders{
     padding:$space-1;

@@ -65,6 +65,9 @@ body{
     background:$clr-second;
     color:#fff;
   }
+  &-back{
+    margin:$space-1;
+  }
 }
 
 header{

@@ -7,7 +7,7 @@ import router from './router/router'
 
 const app = createApp(App)
 
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+app
+.use(createPinia())
+.use(router)
+.mount('#app')
