@@ -5,13 +5,14 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base:'/currency-converter/',
-  css:{
-    preprocessorOptions:{
-      scss:{
-        additionalData:`@import "@/assets/variables.scss";`,
-      },
-    },
+  // eslint-disable-next-line no-undef
+  base: process.env.NODE_ENV === 'development' ? '/currency-converter/' : '/',
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/assets/variables.scss";`
+      }
+    }
   },
   plugins: [vue()],
   resolve: {
