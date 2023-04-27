@@ -6,7 +6,7 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   // eslint-disable-next-line no-undef
-  base: process.env.NODE_ENV === 'development' ? '/currency-converter/' : '/',
+  // base: process.env.NODE_ENV === 'development' ? '/currency-converter/' : '/',
   css: {
     preprocessorOptions: {
       scss: {
