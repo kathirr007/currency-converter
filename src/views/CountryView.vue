@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link class="link link-back" to="/">
+    <router-link class="link link-back" to="/currency-converter/">
       <i class="fas fa-arrow-left"></i>
     </router-link>
     <div class="countries">
